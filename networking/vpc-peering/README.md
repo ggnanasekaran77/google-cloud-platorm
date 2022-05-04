@@ -57,6 +57,12 @@ gcloud compute firewall-rules   create test-3-fw-ssh-allow-peer --direction=INGR
 gcloud compute instances create test-3-ce-peer-poc --zone=asia-southeast1-a --machine-type=f1-micro --subnet=test-3-subnet-peer-asia-southeast1 --no-address
 ```
 
+## VPC Run Test results
+
+```shell
+cd networking/vpc-peering
+bash demo.sh
+```
 
 ## VPC Peering Results
 
