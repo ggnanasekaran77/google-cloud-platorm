@@ -31,6 +31,19 @@ gcloud compute firewall-rules   create prd-service-1-fw-ssh-allow --direction=IN
 gcloud compute firewall-rules   create cicd-monitor-fw-ssh-allow --direction=INGRESS --priority=1000 --network=cicd-monitor-svpc --action=ALLOW --rules=tcp:22 --source-ranges=0.0.0.0/0
 ```
 
+## Create VMs for Testing
+
+```shell
+gcloud config set project dev-service-1
+gcloud compute instances create dev-service-1-vm-svpc --zone=asia-southeast1-a --machine-type=f1-micro --subnet=projects/gnanam-host-project/regions/asia-southeast1/subnetworks/dev-service-1-subnet-asia-southeast1 --no-address
+
+gcloud config set project prd-service-1
+gcloud compute instances create prd-service-1-vm-svpc --zone=asia-southeast1-a --machine-type=f1-micro --subnet=projects/gnanam-host-project/regions/asia-southeast1/subnetworks/prd-service-1-subnet-asia-southeast1 --no-address
+
+gcloud config set project cicd-monitor
+gcloud compute instances create cicd-monitor-vm-svpc --zone=asia-southeast1-a --machine-type=f1-micro --subnet=projects/gnanam-host-project/regions/asia-southeast1/subnetworks/cicd-monitor-subnet-asia-southeast1 --no-address
+```
+
 ## VPC Run Test results
 
 ```shell
