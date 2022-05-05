@@ -1,6 +1,5 @@
 # VPC PEERING
 
- 
 
 ## VPC Peering Setup
 
