@@ -59,3 +59,25 @@ bash demo.sh
 ## Test Result After VPC Peering
 
 ![Shared VPC Setup](../../images/networking/shared-vpc/svpc-af-peer.png)
+
+## Cross Verification
+
+### Shared VPC Setup
+
+![Shared VPC Setup](../../images/networking/shared-vpc/gnanam-host-vpc.png)
+
+### Shared VPC Policies
+
+![Shared VPC Setup](../../images/networking/shared-vpc/gnanam-host-svpc-policies.png)
+
+### Subnets List on Host Project
+
+![Shared VPC Setup](../../images/networking/shared-vpc/gnanam-host-subnets.png)
+
+### Subnet List on DEV Service Project as developer
+
+![Shared VPC Setup](../../images/networking/shared-vpc/dev-project-1-developer.png)
+
+### Subnet List on PRD Service Project as SupportEngineer
+
+![Shared VPC Setup](../../images/networking/shared-vpc/prd-service-1-support-engineer.png)
