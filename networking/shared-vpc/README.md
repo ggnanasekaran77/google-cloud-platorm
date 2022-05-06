@@ -5,13 +5,16 @@
 
 ![Shared VPC Setup](../../images/networking/shared-vpc/shared-vpc.png)
 
+![Shared VPC Setup](../../images/networking/shared-vpc/shared-vpc-diagram.png)
+
 ## Shared VPCs in Host Project
 
-| Project             | VPC Name           | Subnet-1    |
-|---------------------|--------------------|-------------|
-| gnanam-host-project | dev-service-1-svpc | 10.0.1.0/24 |
-| gnanam-host-project | prd-service-1-svpc | 10.0.2.0/24 |
-| gnanam-host-project | cicd-monitor-svpc  | 10.0.3.0/24 |
+| Project             | VPC Name            | Subnet-1      |
+|---------------------|---------------------|---------------|
+| gnanam-host-project | dev-service-1-svpc  | 10.0.1.0/24   |
+| gnanam-host-project | dev-service-1-svpc  | 10.0.10.0/24  |
+| gnanam-host-project | prd-service-1-svpc  | 10.0.2.0/24   |
+| gnanam-host-project | cicd-monitor-svpc   | 10.0.3.0/24   |
 
 ## Shared VPC Commands
 ```shell
@@ -19,6 +22,8 @@ gcloud config set project gnanam-host-project
 
 gcloud compute networks create dev-service-1-svpc --subnet-mode=custom
 gcloud compute networks subnets create dev-service-1-subnet-asia-southeast1 --network=dev-service-1-svpc --region=asia-southeast1 --range=10.0.1.0/24
+gcloud compute networks subnets create dev-service-1-subnet-not-shared --network=dev-service-1-svpc --region=asia-southeast1 --range=10.0.10.0/24
+
 
 gcloud compute networks create prd-service-1-svpc --subnet-mode=custom
 gcloud compute networks subnets create prd-service-1-subnet-asia-southeast1 --network=prd-service-1-svpc --region=asia-southeast1 --range=10.0.2.0/24
