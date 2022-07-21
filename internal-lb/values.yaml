@@ -1,0 +1,12 @@
+rbac.create: true
+controller.publishService.enabled: true
+
+controller:
+  service:
+    loadBalancerIP: 10.20.0.7
+    loadBalancerSourceRanges:
+      - 10.20.0.0/24
+      - 10.129.0.0/23
+      - 10.10.0.0/24
+    annotations:
+      cloud.google.com/load-balancer-type: "Internal"
